@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Ewkowelove | torty artystyczne na zamówienie, Gdańsk i Trójmiasto</title>
+<meta name="description" content="Makieta strony Ewkowelove: torty artystyczne na zamówienie, urodzinowe i weselne, ręcznie tworzone dekoracje, słodkie stoły i boxy. Gdańsk i Trójmiasto, 605 761 081.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Mulish:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+/* Ewkowelove: monogram "E" i złote ornamenty z okładki, róż pudrowy, czysta biel, grafit.
+   Układ wzorowany na prostej, czytelnej stronie: jasny opis + przycisk, trzy karty ze zdjęciami,
+   realizacje z opisami smaków, jak zamówić w 3 krokach, opinie, kontakt. Do tego obracający się tort 3D na złotej paterze. */
+:root{
+  --blush:#f6e1e4;
+  --blush2:#eec6cd;
+  --gold:#b8945a;
+  --gold2:#d9bd88;
+  --ink:#2b2326;
+  --white:#ffffff;
+  --gut:clamp(18px,5vw,64px);
+  --sc:'Pinyon Script',cursive;
+  --hd:'Playfair Display',Georgia,serif;
+  --bd:'Mulish','Helvetica Neue',Arial,sans-serif;
+  --fs:17px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--white);scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:var(--bd);font-size:var(--fs);line-height:1.65;color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.big{--fs:20px}
+body.hc{--blush:#ffffff;--blush2:#000;--gold:#000;--gold2:#000;--ink:#000}
+a{color:inherit;text-underline-offset:4px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--hd);font-weight:500;line-height:1.05;letter-spacing:-.01em}
+
+.a11y{position:fixed;right:14px;bottom:14px;z-index:50;display:flex;gap:6px}
+.a11y button{font:800 14px var(--bd);min-width:46px;min-height:46px;border-radius:50%;border:1.5px solid var(--gold);background:var(--white);color:var(--ink);cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.a11y button[aria-pressed=true]{background:var(--ink);color:var(--white)}
+
+/* HERO */
+.hero{position:relative;background:linear-gradient(180deg,var(--white) 0%,var(--blush) 100%);overflow:hidden;isolation:isolate}
+.orn{position:absolute;inset:0;z-index:-1;opacity:.5;pointer-events:none;
+  background:radial-gradient(circle at 15% 20%,rgba(217,189,136,.35) 0 2px,transparent 3px) 0 0/46px 46px}
+.petal{position:absolute;width:14px;height:20px;border-radius:70% 0 70% 0;background:var(--blush2);opacity:.8;z-index:-1;animation:fall linear infinite}
+@keyframes fall{from{transform:translateY(-10vh) rotate(0)}to{transform:translateY(110vh) rotate(360deg)}}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px var(--gut);border-bottom:1px solid rgba(184,148,90,.35)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 15px var(--bd);letter-spacing:.32em;text-transform:uppercase}
+.logo i{font:400 44px/1 var(--sc);font-style:normal;color:var(--gold);letter-spacing:0;margin-top:6px}
+.nav ul{list-style:none;display:flex;gap:clamp(14px,2.6vw,30px);font-weight:700;font-size:14px;letter-spacing:.06em}
+.nav ul a{text-decoration:none}.nav ul a:hover{color:var(--gold)}
+@media(max-width:760px){.nav ul{display:none}}
+.msg{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:var(--ink);color:var(--white);font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap}
+.stage{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:20px;padding:20px var(--gut) 56px}
+.kick{font-weight:800;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+h1{font-size:clamp(56px,8.6vw,124px);margin-top:10px}
+h1 em{display:block;font:400 clamp(40px,5vw,72px)/1.1 var(--sc);color:var(--gold);margin-top:4px}
+.lede{font-size:clamp(18px,1.6vw,21px);max-width:36ch;margin-top:16px}
+.ticks{list-style:none;display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;font-weight:700;font-size:15px}
+.ticks li::before{content:"✦ ";color:var(--gold)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;min-height:54px;padding:0 26px;border-radius:999px;border:1.5px solid var(--ink);font-weight:800;text-decoration:none;background:transparent}
+.btn.f{background:var(--ink);color:var(--white)}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:var(--white)}
+.model{position:relative;aspect-ratio:1/1;width:100%;max-width:560px;justify-self:center}
+.ring{position:absolute;inset:6%;border-radius:50%;border:1.5px solid var(--gold2);animation:spin 40s linear infinite}
+.ring::before,.ring::after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:var(--gold)}
+.ring::before{top:-6px;left:calc(50% - 6px)}.ring::after{bottom:-6px;left:calc(50% - 6px)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.stand{position:absolute;left:24%;right:24%;bottom:15%;height:7%;border-radius:50%;background:radial-gradient(ellipse at 50% 30%,#f7e7c4,var(--gold) 55%,#7d6233 90%);box-shadow:0 16px 26px rgba(0,0,0,.18)}
+.stand::after{content:"";position:absolute;left:44%;right:44%;top:70%;height:120%;background:linear-gradient(90deg,#7d6233,var(--gold2),#7d6233)}
+#cv{position:absolute;inset:0;width:100%;height:100%;display:block}
+.model figcaption{position:absolute;left:0;right:0;bottom:0;text-align:center;font-size:12px;opacity:.7}
+@media(max-width:640px){
+  .stage{grid-template-columns:1fr;gap:0;padding-bottom:34px}
+  .model{max-width:66vw;order:-1;margin:-4px auto 0}
+}
+
+.sec{padding:clamp(64px,10vh,120px) var(--gut)}
+.wrap{max-width:1160px;margin:0 auto}
+.center{text-align:center}
+.sec h2{font-size:clamp(40px,5.6vw,74px)}
+.sec .intro{max-width:56ch;margin:16px auto 0;font-size:18px}
+.flour{display:block;width:120px;height:14px;margin:14px auto 0;background:radial-gradient(circle,var(--gold) 0 3px,transparent 4px) center/18px 14px repeat-x}
+
+/* OFERTA */
+.offer .cards{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,40px);margin-top:48px}
+@media(max-width:760px){.offer .cards{grid-template-columns:1fr}}
+.offer li{text-align:center}
+.offer img{display:block;width:min(240px,70%);height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;margin:0 auto;box-shadow:0 0 0 6px var(--white),0 0 0 7.5px var(--gold2);transition:transform .4s}
+.offer li:hover img{transform:scale(1.04)}
+.offer h3{font-size:28px;margin-top:22px}
+.offer p{margin-top:8px;max-width:30ch;margin-left:auto;margin-right:auto}
+.note{display:block;margin-top:30px;text-align:center;font-size:13px;opacity:.7}
+
+/* REALIZACJE */
+.works{background:var(--blush)}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:44px}
+@media(max-width:860px){.grid3{grid-template-columns:1fr}}
+.work{background:var(--white);border-radius:6px;padding:26px 24px;border-top:4px solid var(--gold)}
+.work .kick{font-size:11px}
+.work h3{font-size:26px;margin-top:8px}
+.work p{margin-top:10px;font-size:16px}
+.flav{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.flav span{padding:5px 11px;border-radius:999px;background:var(--blush);font-weight:700;font-size:13px}
+
+/* JAK ZAMÓWIĆ */
+.how ol{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:44px;counter-reset:k}
+@media(max-width:860px){.how ol{grid-template-columns:1fr}}
+.how li{position:relative;padding:28px 24px;border:1.5px solid var(--gold2);border-radius:6px}
+.how li::before{counter-increment:k;content:counter(k);position:absolute;top:-22px;left:20px;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--white);display:grid;place-items:center;font:700 18px var(--hd)}
+.how h3{font-size:24px;margin-top:10px}
+.how p{margin-top:8px;font-size:16px}
+.how .ctas{justify-content:center;margin-top:36px}
+
+/* OPINIE */
+.score{background:var(--ink);color:var(--white);text-align:center}
+.score b{display:block;font:500 clamp(70px,10vw,140px)/1 var(--hd);color:var(--gold2)}
+.score .stars{letter-spacing:.3em;color:var(--gold2);font-size:22px;margin-top:6px}
+.score p{margin-top:12px;opacity:.85}
+
+/* KONTAKT */
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(30px,6vw,80px)}
+@media(max-width:860px){.contact .wrap{grid-template-columns:1fr}}
+dl{display:grid;grid-template-columns:auto 1fr;gap:12px 22px;margin-top:26px}
+dt{font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding-top:4px;color:var(--gold)}
+dd{font-size:18px}
+.areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.areas span{padding:7px 13px;border-radius:999px;border:1px solid var(--gold2);font-size:14px}
+.mapbox{border-radius:6px;overflow:hidden;min-height:400px;border:1.5px solid var(--gold2)}
+.mapbox iframe{display:block;width:100%;height:100%;min-height:400px;border:0}
+footer{background:var(--blush);color:var(--ink);padding:28px var(--gut) 80px}
+footer p{max-width:88ch;font-size:13px;opacity:.85}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.ring,.petal{animation:none}.petal{display:none}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="a11y" aria-label="Ułatwienia dostępu">
+  <button type="button" id="aBig" aria-pressed="false" title="Większy tekst">A+</button>
+  <button type="button" id="aHc" aria-pressed="false" title="Wysoki kontrast">◐</button>
+</div>
+
+<header class="hero" id="start">
+  <div class="orn" aria-hidden="true"></div>
+  <nav class="nav" aria-label="Menu">
+    <a class="logo" href="#start"><i>E</i>Ewkowelove</a>
+    <ul><li><a href="#oferta">Oferta</a></li><li><a href="#realizacje">Realizacje</a></li><li><a href="#zamow">Jak zamówić</a></li><li><a href="#kontakt">Kontakt</a></li></ul>
+    <a class="msg" href="https://m.me/100063530314410">Napisz</a>
+  </nav>
+  <div class="stage">
+    <div>
+      <div class="kick">Gdańsk · Trójmiasto</div>
+      <h1>Ewkowelove<em>torty artystyczne</em></h1>
+      <p class="lede">Torty na zamówienie dopasowane do Waszych pomysłów i marzeń: urodzinowe, weselne i okolicznościowe.</p>
+      <ul class="ticks"><li>ręcznie tworzone dekoracje</li><li>słodkie stoły</li><li>słodkie boxy</li></ul>
+      <div class="ctas"><a class="btn f" href="#zamow">Zapytaj o termin</a><a class="btn" href="#realizacje">Zobacz realizacje</a></div>
+    </div>
+    <figure class="model">
+      <div class="ring" aria-hidden="true"></div>
+      <div class="stand" aria-hidden="true"></div>
+      <canvas id="cv" role="img" aria-label="Trójwymiarowy dwupiętrowy tort z różami na złotej paterze, model wygenerowany komputerowo."></canvas>
+      <figcaption>Tort: model 3D wygenerowany komputerowo.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+<section class="sec offer" id="oferta">
+  <div class="wrap">
+    <div class="center rv"><div class="kick">Oferta</div><h2>Na każdą wyjątkową okazję</h2><span class="flour" aria-hidden="true"></span></div>
+    <ul class="cards">
+      <li class="rv"><img src="urodzinowe.jpg" alt="Tort z owocami (ilustracja)" width="480" height="480" loading="lazy"><h3>Torty urodzinowe</h3><p>Z ulubionym bohaterem, pupilem albo w ulubionych kolorach.</p></li>
+      <li class="rv"><img src="weselne.jpg" alt="Dwupiętrowy tort z różami (ilustracja)" width="480" height="480" loading="lazy"><h3>Torty weselne</h3><p>Subtelne kolory, ręcznie wykonane dekoracje i dopracowane detale.</p></li>
+      <li class="rv"><img src="stoly.jpg" alt="Deser z malinami (ilustracja)" width="480" height="480" loading="lazy"><h3>Słodkie stoły i boxy</h3><p>Dopasowane słodkie dodatki do tortu i na prezent.</p></li>
+    </ul>
+    <span class="note">Zdjęcia poglądowe (wizualizacje 3D). W pełnej wersji pojawią się zdjęcia tortów Ewkowelove.</span>
+  </div>
+</section>
+
+<section class="sec works" id="realizacje">
+  <div class="wrap">
+    <div class="center rv"><div class="kick">Ostatnie realizacje</div><h2>Każdy tort ma swoją historię</h2></div>
+    <div class="grid3">
+      <article class="work rv"><div class="kick">9. urodziny</div><h3>Tort Kairy</h3>
+        <p>Ukochany pupil na desce surfingowej, delikatna tęcza i kwiaty. Dziecięce marzenie zamienione w projekt.</p>
+        <div class="flav"><span>deserowa czekolada</span></div></article>
+      <article class="work rv"><div class="kick">wolna ręka</div><h3>Tort dla dziewczynek</h3>
+        <p>Dekoracja z pełną swobodą twórczą, dopasowane słodkie dodatki i róż, który skradł całe kadry.</p>
+        <div class="flav"><span>wanilia z truskawką</span><span>mango, marakuja i malina</span></div></article>
+      <article class="work rv"><div class="kick">pół roczku</div><h3>Tort Mareczka</h3>
+        <p>Delikatny błękit, ciepły beż, maleńkie klocki i miś, który skradł całe show.</p>
+        <div class="flav"><span>truskawka z frużeliną</span><span>Oreo z praliną czekoladowo-orzechową</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec how" id="zamow">
+  <div class="wrap">
+    <div class="center rv"><div class="kick">Jak zamówić</div><h2>Trzy kroki do tortu</h2></div>
+    <ol class="rv">
+      <li><h3>Napisz</h3><p>W wiadomości prywatnej, mailem albo zadzwoń.</p></li>
+      <li><h3>Opowiedz</h3><p>Jaka to okazja, jaki termin, dla ilu osób i jaki masz pomysł.</p></li>
+      <li><h3>Ustalmy szczegóły</h3><p>Wspólnie dobierzemy smaki, kolory i dekoracje.</p></li>
+    </ol>
+    <div class="ctas rv">
+      <a class="btn f" href="https://m.me/100063530314410">Messenger</a>
+      <a class="btn" href="mailto:ewkowelowe@gmail.com?subject=Zapytanie%20o%20tort&amp;body=Okazja%3A%0ATermin%3A%0ALiczba%20os%C3%B3b%3A%0APomys%C5%82%3A">E-mail z szablonem</a>
+      <a class="btn" href="tel:+48605761081">605 761 081</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec score" aria-label="Opinie">
+  <div class="wrap rv"><b>5 / 5</b><div class="stars" aria-hidden="true">★★★★★</div><p>średnia z 80 opinii na Facebooku</p></div>
+</section>
+
+<section class="sec contact" id="kontakt">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kick">Kontakt</div>
+      <h2>Porozmawiajmy o Twoim torcie</h2>
+      <dl>
+        <dt>Telefon</dt><dd><a href="tel:+48605761081">605 761 081</a></dd>
+        <dt>E-mail</dt><dd><a href="mailto:ewkowelowe@gmail.com">ewkowelowe@gmail.com</a></dd>
+        <dt>Adres</dt><dd>Kolonia Zręby 84, 80-133 Gdańsk</dd>
+        <dt>Social</dt><dd><a href="https://www.facebook.com/profile.php?id=100063530314410" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/ewkowelove/" rel="noopener">Instagram</a></dd>
+      </dl>
+      <div class="areas" aria-label="Obszar"><span>Gdańsk</span><span>Gdynia</span><span>Sopot</span><span>Pruszcz Gdański</span></div>
+    </div>
+    <div class="mapbox rv"><iframe title="Mapa: Ewkowelove, Kolonia Zręby 84, Gdańsk" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=18.5960%2C54.3490%2C18.6140%2C54.3565&amp;layer=mapnik&amp;marker=54.3527066%2C18.6049500"></iframe></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>To makieta nowej strony. Nie ma na niej zdjęć tortów Ewkowelove: tort na ekranie i zdjęcia w kartach to wizualizacje 3D wygenerowane komputerowo. W pełnej wersji pojawią się prawdziwe zdjęcia realizacji, cennik i smaki, za zgodą właścicielki. Opisy, realizacje, smaki, obszar i dane kontaktowe pochodzą z facebookowej strony Ewkowelove.</p>
+</footer>
+
+<script>
+(function(){
+function tog(id,cls){var b=document.getElementById(id);b.addEventListener('click',function(){var on=document.body.classList.toggle(cls);b.setAttribute('aria-pressed',on)})}
+tog('aBig','big');tog('aHc','hc');
+/* płatki w hero */
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){var h=document.querySelector('.hero');for(var i=0;i<9;i++){var p=document.createElement('span');p.className='petal';p.setAttribute('aria-hidden','true');p.style.left=(5+Math.random()*90)+'%';p.style.animationDuration=(11+Math.random()*10)+'s';p.style.animationDelay=(-Math.random()*20)+'s';p.style.transform='scale('+(.6+Math.random()*.8)+')';h.appendChild(p)}}
+var els=document.querySelectorAll('.rv');
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+<script defer>
+addEventListener('DOMContentLoaded',function(){
+var cv=document.getElementById('cv');if(!window.THREE||!THREE.GLTFLoader){cv.remove();return}
+try{var R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true})}catch(e){cv.remove();return}
+R.setPixelRatio(Math.min(devicePixelRatio||1,2));R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.05;
+var S=new THREE.Scene(),cam=new THREE.PerspectiveCamera(30,1,.1,50);cam.position.set(0,1.4,6.4);cam.lookAt(0,-.05,0);
+S.add(new THREE.HemisphereLight(0xffffff,0x8a6a5a,.9));
+var k=new THREE.DirectionalLight(0xfff4e6,1.5);k.position.set(3,5,4);S.add(k);
+var r=new THREE.DirectionalLight(0xffe0e6,1);r.position.set(-4,2,-3);S.add(r);
+var piv=new THREE.Group();S.add(piv);
+new THREE.GLTFLoader().load('tort.glb',function(g){var o=g.scene,b=new THREE.Box3().setFromObject(o),s=b.getSize(new THREE.Vector3()),c=b.getCenter(new THREE.Vector3()),sc=2.1/Math.max(s.x,s.y,s.z);o.scale.setScalar(sc);o.position.set(-c.x*sc,-c.y*sc+.05,-c.z*sc);piv.add(o)});
+function fit(){var w=cv.clientWidth,h=cv.clientHeight;if(!w)return;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+fit();addEventListener('resize',fit);
+var vis=true;new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);
+var still=matchMedia('(prefers-reduced-motion: reduce)').matches,t0=performance.now();
+(function loop(now){requestAnimationFrame(loop);if(!vis)return;var t=(now-t0)/1000;
+ piv.rotation.y=still?.6:t*.35;R.render(S,cam)})(t0);
+});
+</script>
+<script data-goatcounter="https://penia-demo.goatcounter.com/count" data-goatcounter-settings='{"path":"ewkowelove"}' async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
